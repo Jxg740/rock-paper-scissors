@@ -27,20 +27,21 @@ function playRound(playerSelection, computerSelection) {
     return `It's a draw. ${capitalize(playerSelection)} is the same as ${computerSelection}.`;
 }
 }
-
+//Capitalize first letter 
 function capitalize(str) {
    return str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
 }
 
 function game() {
-    for (let i = 0; i < 5; i++) {
+    
+    while ((playerWins < 5) && (computerWins < 5)) {
     let playerSelection = prompt('Rock, Paper, Scissors:');
     let computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection));
     console.log(`You: ${playerWins}`);
     console.log(`Computer: ${computerWins}`);
     
-    }
+    } 
     playerWins > computerWins ? console.log('You WIN!') : console.log('You LOSE');
 }
 
