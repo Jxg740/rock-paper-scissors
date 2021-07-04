@@ -11,20 +11,27 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
    
-    if ((playerSelection.toUpperCase() === 'ROCK' && computerSelection === 'Scissors') ||
-        (playerSelection.toUpperCase() === 'PAPER' && computerSelection === 'Rock') ||
-        (playerSelection.toUpperCase() === 'SCISSORS' && computerSelection === 'Paper')    
+    if      ((playerSelection.toUpperCase() === 'ROCK' && computerSelection === 'Scissors') ||
+             (playerSelection.toUpperCase() === 'PAPER' && computerSelection === 'Rock') ||
+             (playerSelection.toUpperCase() === 'SCISSORS' && computerSelection === 'Paper')    
     ) {
         playerWins++;
         return `You win! ${capitalize(playerSelection)} beats ${computerSelection}!`;
-    } else if ((playerSelection.toUpperCase() === 'ROCK' && computerSelection === 'Paper') ||
-               (playerSelection.toUpperCase() === 'PAPER' && computerSelection === 'Scissors') ||
-               (playerSelection.toUpperCase() === 'SCISSORS' && computerSelection === 'Rock')    
+ }  else if ((playerSelection.toUpperCase() === 'ROCK' && computerSelection === 'Paper') ||
+             (playerSelection.toUpperCase() === 'PAPER' && computerSelection === 'Scissors') ||
+             (playerSelection.toUpperCase() === 'SCISSORS' && computerSelection === 'Rock')    
 ) {
-    computerWins++;
-    return `You lose. ${computerSelection} beats ${capitalize(playerSelection)}.`;
-} else {
-    return `It's a draw. ${capitalize(playerSelection)} is the same as ${computerSelection}.`;
+              computerWins++;
+        return `You lose. ${computerSelection} beats ${capitalize(playerSelection)}.`;
+}   else if ((playerSelection.toUpperCase() === 'ROCK' && computerSelection === 'rock') ||
+             (playerSelection.toUpperCase() === 'PAPER' && computerSelection === 'Paper') ||
+             (playerSelection.toUpperCase() === 'SCISSORS' && computerSelection === 'Scissors')    
+) {
+        return `It's a draw. ${capitalize(playerSelection)} is the same as ${computerSelection}.`;
+
+}
+else {
+        return 'Please make a valid selection.';
 }
 }
 //Capitalize first letter 
