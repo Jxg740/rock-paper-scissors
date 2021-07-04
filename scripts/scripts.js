@@ -23,7 +23,7 @@ function playRound(playerSelection, computerSelection) {
 ) {
               computerWins++;
         return `You lose. ${computerSelection} beats ${capitalize(playerSelection)}.`;
-}   else if ((playerSelection.toUpperCase() === 'ROCK' && computerSelection === 'rock') ||
+}   else if ((playerSelection.toUpperCase() === 'ROCK' && computerSelection === 'Rock') ||
              (playerSelection.toUpperCase() === 'PAPER' && computerSelection === 'Paper') ||
              (playerSelection.toUpperCase() === 'SCISSORS' && computerSelection === 'Scissors')    
 ) {
