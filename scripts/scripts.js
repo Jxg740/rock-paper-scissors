@@ -12,7 +12,7 @@ results.classList.add('results');
 
 const scoreCon = document.querySelector('#score-container');
 const score = document.createElement('div');
-const gameEnd = document.createElement('div');
+const gameEnd = document.querySelector('#game-end');
 
 score.textContent = `Computer: ${computerWins}   Player: ${playerWins}`;
 scoreCon.appendChild(score);
@@ -27,11 +27,11 @@ rock.addEventListener('click', () => {
    score.textContent = `Computer: ${computerWins}   Player: ${playerWins}`;
    scoreCon.appendChild(score);
    if(playerWins === 5) {
-    gameEnd.textContent = 'You Win!'
-    scoreCon.appendChild(gameEnd);
+    gameEnd.textContent = 'Game Over. You Win!'
+    
 } else if (computerWins === 5) {
-    gameEnd.textContent = 'You Lose );'
-    scoreCon.appendChild(gameEnd);
+    gameEnd.textContent = 'Game Over. You Lose );'
+    
 }
 });
 
@@ -43,11 +43,11 @@ paper.addEventListener('click', () => {
     score.textContent = `Computer: ${computerWins}   Player: ${playerWins}`;
     scoreCon.appendChild(score);
     if(playerWins === 5) {
-        gameEnd.textContent = 'You Win!'
-        scoreCon.appendChild(gameEnd);
+        gameEnd.textContent = 'Game Over. You Win!'
+    
     } else if (computerWins === 5) {
-        gameEnd.textContent = 'You Lose );'
-        scoreCon.appendChild(gameEnd);
+        gameEnd.textContent = 'Game Over. You Lose );'
+        
     }
  });
 
@@ -59,11 +59,11 @@ paper.addEventListener('click', () => {
     score.textContent = `Computer: ${computerWins}   Player: ${playerWins}`;
     scoreCon.appendChild(score);
     if(playerWins === 5) {
-        gameEnd.textContent = 'You Win!'
-        scoreCon.appendChild(gameEnd);
+        gameEnd.textContent = 'Game Over. You Win!'
+   
     } else if (computerWins === 5) {
-        gameEnd.textContent = 'You Lose );'
-        scoreCon.appendChild(gameEnd);
+        gameEnd.textContent = 'Game Over. You Lose );'
+        
     }
  });
 

@@ -1,0 +1,58 @@
+body {
+    background-color: ivory;
+}
+
+button {
+    width: 200px;
+    height: auto;
+    border-style: none;
+    background-color: ivory;
+    
+    
+}
+
+button:hover {
+    border:1px solid grey;
+    border-radius: 10px;
+    background-color: rgb(233, 227, 227);
+}
+#buttons {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+        
+}
+
+#results-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;   
+    margin-top: 100px;
+    font-size: x-large;
+}
+
+#score-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    margin-bottom: 90px;
+    margin-top: 80px;
+}
+
+#game-end {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    font-size: xx-large;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
