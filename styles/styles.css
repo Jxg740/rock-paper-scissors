@@ -25,7 +25,7 @@ button:hover {
         
 }
 
-#results-container {
+#results {
     display: flex;
     width: 100%;
     justify-content: center;
@@ -34,7 +34,7 @@ button:hover {
     font-size: x-large;
 }
 
-#score-container {
+#score {
     display: flex;
     width: 100%;
     justify-content: center;

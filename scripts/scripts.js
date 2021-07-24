@@ -5,17 +5,11 @@ let playerWins = 0;
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
-
-const container = document.querySelector('#results-container');
-const results = document.createElement('div');
-results.classList.add('results');
-
-const scoreCon = document.querySelector('#score-container');
-const score = document.createElement('div');
 const gameEnd = document.querySelector('#game-end');
-
+const results = document.querySelector('#results');
+const score = document.querySelector('#score');
 score.textContent = `Computer: ${computerWins}   Player: ${playerWins}`;
-scoreCon.appendChild(score);
+
 
 
 
@@ -23,9 +17,9 @@ rock.addEventListener('click', () => {
    const playerSelection = 'rock';
    let computerSelection = computerPlay();
    results.textContent = playRound(playerSelection, computerSelection);   
-   container.appendChild(results);
+   
    score.textContent = `Computer: ${computerWins}   Player: ${playerWins}`;
-   scoreCon.appendChild(score);
+   
    if(playerWins === 5) {
     gameEnd.textContent = 'Game Over. You Win!'
     
@@ -39,9 +33,9 @@ paper.addEventListener('click', () => {
     const playerSelection = 'paper';
     let computerSelection = computerPlay();
     results.textContent = playRound(playerSelection, computerSelection);
-    container.appendChild(results);
+    
     score.textContent = `Computer: ${computerWins}   Player: ${playerWins}`;
-    scoreCon.appendChild(score);
+    ;
     if(playerWins === 5) {
         gameEnd.textContent = 'Game Over. You Win!'
     
@@ -55,9 +49,9 @@ paper.addEventListener('click', () => {
     const playerSelection = 'scissors';
     let computerSelection = computerPlay();
     results.textContent = playRound(playerSelection, computerSelection);
-    container.appendChild(results);
+    
     score.textContent = `Computer: ${computerWins}   Player: ${playerWins}`;
-    scoreCon.appendChild(score);
+   
     if(playerWins === 5) {
         gameEnd.textContent = 'Game Over. You Win!'
    
