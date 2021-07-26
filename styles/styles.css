@@ -1,12 +1,12 @@
 body {
-    background-color: ivory;
+    background-color: rgb(242, 246, 167);
 }
 
 button {
     width: 200px;
     height: auto;
     border-style: none;
-    background-color: ivory;
+    background-color: rgb(242, 246, 167);
     
     
 }

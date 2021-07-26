@@ -9,63 +9,44 @@ const gameEnd = document.querySelector('#game-end');
 const results = document.querySelector('#results');
 const score = document.querySelector('#score');
 score.textContent = `Computer: ${computerWins}   Player: ${playerWins}`;
+const buttons = document.querySelectorAll('button');
 
 
-
-
-rock.addEventListener('click', () => {
-   const playerSelection = 'rock';
-   let computerSelection = computerPlay();
-   results.textContent = playRound(playerSelection, computerSelection);   
-   
-   score.textContent = `Computer: ${computerWins}   Player: ${playerWins}`;
-   
-   if(playerWins === 5) {
-    gameEnd.textContent = 'Game Over. You Win!'
-    
-} else if (computerWins === 5) {
-    gameEnd.textContent = 'Game Over. You Lose );'
+function playerChoice() {
+    const choice = this.getAttribute('value');
+    const playerSelection = choice;
+    let computerSelection = computerPlay();
+    results.textContent = playRound(playerSelection, computerSelection);
     
 }
+
+buttons.forEach((button) => {
+    button.addEventListener('click', playerChoice);    
 });
 
-paper.addEventListener('click', () => {
-    const playerSelection = 'paper';
-    let computerSelection = computerPlay();
-    results.textContent = playRound(playerSelection, computerSelection);
-    
-    score.textContent = `Computer: ${computerWins}   Player: ${playerWins}`;
-    ;
-    if(playerWins === 5) {
-        gameEnd.textContent = 'Game Over. You Win!'
-    
-    } else if (computerWins === 5) {
-        gameEnd.textContent = 'Game Over. You Lose );'
-        
-    }
- });
 
- scissors.addEventListener('click', () => {
-    const playerSelection = 'scissors';
-    let computerSelection = computerPlay();
-    results.textContent = playRound(playerSelection, computerSelection);
-    
-    score.textContent = `Computer: ${computerWins}   Player: ${playerWins}`;
-   
+
+
+function checkWins() {
     if(playerWins === 5) {
-        gameEnd.textContent = 'Game Over. You Win!'
-   
+        gameEnd.textContent = 'Game Over. You Win!';
+        buttons.forEach((button) => {
+            button.removeEventListener('click', playerChoice);
+        });
     } else if (computerWins === 5) {
-        gameEnd.textContent = 'Game Over. You Lose );'
-        
-    }
- });
+        gameEnd.textContent = 'Game Over. You Lose ):';
+        buttons.forEach((button) => {
+            button.removeEventListener('click', playerChoice);
+        });       
+    };
+    
+};
 
  function computerPlay() {
     const myArray = ['Rock', 'Paper', 'Scissors'];
     let random = Math.floor(Math.random() * myArray.length);
     return myArray[random];
-}
+};
 
 function playRound(playerSelection, computerSelection) {
    
@@ -73,13 +54,17 @@ function playRound(playerSelection, computerSelection) {
              (playerSelection === 'paper' && computerSelection === 'Rock') ||
              (playerSelection === 'scissors' && computerSelection === 'Paper')    
     ) {
-        playerWins++;
+              playerWins++;
+              score.textContent = `Computer: ${computerWins}   Player: ${playerWins}`;        
+              checkWins();
         return `You win! ${capitalize(playerSelection)} beats ${computerSelection}!`;
  }  else if ((playerSelection === 'rock' && computerSelection === 'Paper') ||
              (playerSelection === 'paper' && computerSelection === 'Scissors') ||
              (playerSelection === 'scissors' && computerSelection === 'Rock')    
 ) {
               computerWins++;
+              score.textContent = `Computer: ${computerWins}   Player: ${playerWins}`;
+              checkWins();
         return `You lose. ${computerSelection} beats ${capitalize(playerSelection)}.`;
 }   else if ((playerSelection === 'rock' && computerSelection === 'Rock') ||
              (playerSelection === 'paper' && computerSelection === 'Paper') ||
