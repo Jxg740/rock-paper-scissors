@@ -2,30 +2,23 @@
 let computerWins = 0;
 let playerWins = 0;
 
-const rock = document.querySelector('#rock');
-const paper = document.querySelector('#paper');
-const scissors = document.querySelector('#scissors');
 const gameEnd = document.querySelector('#game-end');
 const results = document.querySelector('#results');
 const score = document.querySelector('#score');
-score.textContent = `Computer: ${computerWins}   Player: ${playerWins}`;
 const buttons = document.querySelectorAll('button');
 
+score.textContent = `Computer: ${computerWins}   Player: ${playerWins}`;
 
 function playerChoice() {
     const choice = this.getAttribute('value');
     const playerSelection = choice;
     let computerSelection = computerPlay();
     results.textContent = playRound(playerSelection, computerSelection);
-    
 }
 
 buttons.forEach((button) => {
     button.addEventListener('click', playerChoice);    
 });
-
-
-
 
 function checkWins() {
     if(playerWins === 5) {
@@ -39,7 +32,6 @@ function checkWins() {
             button.removeEventListener('click', playerChoice);
         });       
     };
-    
 };
 
  function computerPlay() {
@@ -71,12 +63,10 @@ function playRound(playerSelection, computerSelection) {
              (playerSelection === 'scissors' && computerSelection === 'Scissors')    
 ) {
         return `It's a draw. ${capitalize(playerSelection)} is the same as ${computerSelection}.`;
-
 }
 
 }
 //Capitalize first letter 
 function capitalize(str) {
    return str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
-}
-
+};
